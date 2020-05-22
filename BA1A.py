@@ -1,14 +1,14 @@
-dataset_file = open("datasets/rosalind_ba1a.txt", "r")
-t = dataset_file.readline().strip()
-p = dataset_file.readline().strip()
+datasetFile = open("datasets/rosalind_ba1a.txt", "r")
+text = datasetFile.readline().strip()
+pattern = datasetFile.readline().strip()
 
 print("Compute the Number of Times a Pattern Appears in a Text\n")
 
-def PatternCount(t, p):
+def patternCount(text, pattern):
     count = 0
-    for i in range(len(t) - len(p) + 1):
-        if t[i:i+len(p)] == p:
+    for i in range(len(text) - len(pattern) + 1):
+        if text[i:i+len(pattern)] == pattern:
             count += 1
     return count
 
-print(PatternCount(t, p))
+print(patternCount(text, pattern))
